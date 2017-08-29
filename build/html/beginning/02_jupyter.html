@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Note 0.1 documentation" href="../index.html"/>
         <link rel="up" title="入门篇" href="index.html"/>
-        <link rel="next" title="3. 数据绘图（Seaborn)" href="05_seaborn.html"/>
+        <link rel="next" title="3. 数值计算（Numpy）" href="03_numpy.html"/>
         <link rel="prev" title="1. Linux 基础" href="01_linux.html"/> 
 
   
@@ -111,7 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#id8">2.6. 转换</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">3. 数据绘图（Seaborn)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. 数值计算（Numpy）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 数据绘图（Matplotlib）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">5. 数据绘图（Seaborn)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">基础篇</a></li>
@@ -181,7 +183,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="jupyter">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="jupyter">
 <h1>2. Jupyter 的安装和使用<a class="headerlink" href="#jupyter" title="Permalink to this headline">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -285,27 +321,27 @@ Jupyter 的快捷，用 Jupyter 写报告之类基本上不需要鼠标了。</p
 </div>
 <div class="section" id="id6">
 <h2>2.4. 查看对象信息<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 <p>按 <code class="docutils literal"><span class="pre">tab</span></code> 键查看提示信息</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.&lt;</span><span class="n">tab</span><span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.&lt;</span><span class="n">tab</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>查找 <code class="docutils literal"><span class="pre">numpy</span></code> 模块下，名称含有 <code class="docutils literal"><span class="pre">cos</span></code> 的对象</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span>np.*cos*?
+<div class="highlight-python"><div class="highlight"><pre><span></span>np.*cos*?
 </pre></div>
 </div>
 <p>提供 numpy 模块的帮助信息</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span>np?
+<div class="highlight-python"><div class="highlight"><pre><span></span>np?
 </pre></div>
 </div>
 <p>提供 numpy 模块更详细的帮助信息</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span>np??
+<div class="highlight-python"><div class="highlight"><pre><span></span>np??
 </pre></div>
 </div>
 <p>查看 docstring</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pdoc</span> <span class="n">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pdoc</span> <span class="n">np</span>
 </pre></div>
 </div>
 </div>
@@ -315,7 +351,7 @@ Jupyter 的快捷，用 Jupyter 写报告之类基本上不需要鼠标了。</p
 <code class="docutils literal"><span class="pre">ipython</span> <span class="pre">--pylab</span></code>，画图用的；测试程序运行时间则只需把 <code class="docutils literal"><span class="pre">%time</span></code>
 放在前面。</p>
 <p>更多魔术命令可在 Jupyter Notebook 里键入：</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">lsmagic</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">lsmagic</span>
 </pre></div>
 </div>
 </div>
@@ -351,7 +387,7 @@ pdf，对中文的支持不好。必须先装 LaTex，LaTex 则需先把字体�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="05_seaborn.html" class="btn btn-neutral float-right" title="3. 数据绘图（Seaborn)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="03_numpy.html" class="btn btn-neutral float-right" title="3. 数值计算（Numpy）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="01_linux.html" class="btn btn-neutral" title="1. Linux 基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -395,6 +431,7 @@ pdf，对中文的支持不好。必须先装 LaTex，LaTex 则需先把字体�
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

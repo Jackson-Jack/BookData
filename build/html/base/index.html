@@ -36,8 +36,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Note 0.1 documentation" href="../index.html"/>
-        <link rel="next" title="1. 概率和统计分析（StatsModels）" href="02_stats.html"/>
-        <link rel="prev" title="3. 数据绘图（Seaborn)" href="../beginning/05_seaborn.html"/> 
+        <link rel="next" title="1. 数据操作（Pandas）" href="01_pandas.html"/>
+        <link rel="prev" title="5. 数据绘图（Seaborn)" href="../beginning/05_seaborn.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,10 +93,11 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门篇</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">基础篇</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_stats.html">1. 概率和统计分析（StatsModels）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_scipy.html">2. 数值计算（Scipy）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_statsmodel.html">3. 线性模型（StatsModels）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_sklearn.html">4. 机器学习初步（SKlearn）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_pandas.html">1. 数据操作（Pandas）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_stats.html">2. 概率和统计分析（StatsModels）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_scipy.html">3. 数值计算（Scipy）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_statsmodel.html">4. 线性模型（StatsModels）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_sklearn.html">5. 机器学习初步（SKlearn）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具篇</a></li>
@@ -163,15 +164,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="id1">
 <h1>基础篇<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>这一部分介绍数据科学的基础内容;</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="02_stats.html">1. 概率和统计分析（StatsModels）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_scipy.html">2. 数值计算（Scipy）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_statsmodel.html">3. 线性模型（StatsModels）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_sklearn.html">4. 机器学习初步（SKlearn）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_pandas.html">1. 数据操作（Pandas）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_stats.html">2. 概率和统计分析（StatsModels）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_scipy.html">3. 数值计算（Scipy）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_statsmodel.html">4. 线性模型（StatsModels）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_sklearn.html">5. 机器学习初步（SKlearn）</a></li>
 </ul>
 </div>
 </div>
@@ -186,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="02_stats.html" class="btn btn-neutral float-right" title="1. 概率和统计分析（StatsModels）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="01_pandas.html" class="btn btn-neutral float-right" title="1. 数据操作（Pandas）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../beginning/05_seaborn.html" class="btn btn-neutral" title="3. 数据绘图（Seaborn)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../beginning/05_seaborn.html" class="btn btn-neutral" title="5. 数据绘图（Seaborn)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -230,6 +266,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

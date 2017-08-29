@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Note 0.1 documentation" href="../index.html"/>
         <link rel="next" title="1. 书籍推荐" href="01_books.html"/>
-        <link rel="prev" title="4. 机器学习初步（SKlearn）" href="../base/05_sklearn.html"/> 
+        <link rel="prev" title="5. 机器学习初步（SKlearn）" href="../base/05_sklearn.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -161,7 +161,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="id1">
 <h1>工具篇<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>这篇是 Python 数据科学方面的书、好资源、好用工具等;</p>
 <div class="toctree-wrapper compound">
@@ -185,7 +219,7 @@
         <a href="01_books.html" class="btn btn-neutral float-right" title="1. 书籍推荐" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../base/05_sklearn.html" class="btn btn-neutral" title="4. 机器学习初步（SKlearn）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../base/05_sklearn.html" class="btn btn-neutral" title="5. 机器学习初步（SKlearn）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -226,6 +260,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
